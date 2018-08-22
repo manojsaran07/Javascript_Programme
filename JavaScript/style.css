@@ -1,0 +1,432 @@
+input[type="radio"], input[type="checkbox"] {
+  display: none;
+}
+
+* {
+  font-family: system-ui;
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  background-image: url("back.jpg");
+  background-size: cover;
+}
+
+#toggle-styleguide + label {
+  position: absolute;
+  z-index: 2;
+  width: 18rem;
+  left: -17rem;
+  transition: 0.2s;
+  display: flex;
+  flex-wrap: wrap;
+  height: 100vh;
+}
+#toggle-styleguide + label:after {
+  content: '<';
+  color: white;
+  display: block;
+  position: absolute;
+  width: 2.85rem;
+  height: 2.85rem;
+  text-align: center;
+  line-height: 2.65rem;
+  overflow: hidden;
+  border-top-right-radius: 2.85rem;
+  border-bottom-right-radius: 2.85rem;
+  top: 0;
+  right: -1.425rem;
+  background-color: #FC50A9;
+  font-size: 1.15rem;
+}
+#toggle-styleguide + label:hover {
+  left: 0;
+}
+#toggle-styleguide + label #label-wrapper {
+  height: 100vh;
+  overflow: hidden;
+}
+#toggle-styleguide + label p.button {
+  margin: 0;
+  color: white;
+  position: relative;
+  width: 100%;
+}
+#toggle-styleguide + label #styleguide-wrapper {
+  max-height: 0;
+  overflow: hidden;
+  transition: 0.2s;
+  width: 100%;
+  height: 100%;
+}
+#toggle-styleguide + label #styleguide-wrapper #styleguide-content {
+  overflow: auto;
+  height: 100%;
+}
+#toggle-styleguide + label #styleguide-wrapper section {
+  padding: 1rem;
+  background-color: white;
+  border-bottom: 1px solid #FC50A9;
+  transition: 0.2s;
+}
+#toggle-styleguide + label #styleguide-wrapper section:last-of-type {
+  border-bottom: 0;
+  padding-bottom: 3rem;
+}
+#toggle-styleguide:checked + label {
+  left: 0;
+}
+#toggle-styleguide:checked + label #styleguide-wrapper {
+  max-height: 100vh;
+}
+#toggle-styleguide:checked ~ #window {
+  transform: translate3d(-37%, -50%, 0);
+  position: absolute;
+}
+#toggle-styleguide:checked ~ #window #normal-content {
+  transition-delay: 0s;
+  opacity: 0;
+}
+#toggle-styleguide:checked ~ #window #styleguide-example {
+  transition-delay: 0.3s;
+  opacity: 1;
+  display: flex;
+}
+
+nav label {
+  transition: 0.2s;
+  display: block;
+  padding: 0.5rem 8rem 0.5rem 1.75rem;
+  border-left: 7px solid transparent;
+  margin: 1rem 0;
+}
+nav label:hover {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+#window {
+  background-color: rgba(37, 29, 47, 0.75);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  color: white;
+  position: relative;
+  height: 95vh;
+  width: 95vw;
+  max-width: 70rem;
+  left: 50%;
+  top: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  overflow: hidden;
+  transition: 0.4s;
+}
+#window > * {
+  display: flex;
+  transition: 0.2s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition-delay: 0.2s;
+  width: 100%;
+  height: 100%;
+}
+#window > *#styleguide-example {
+  opacity: 0;
+  transition-delay: 0s;
+  display: none;
+}
+#window .nav-cont {
+  height: 100%;
+}
+#window .nav-cont .nav-contents {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+#window .nav-cont .nav-contents nav {
+  overflow: auto;
+}
+
+
+#content {
+  position: relative;
+  flex-grow: 2;
+  background-color: rgba(37, 29, 47, 0.75);
+}
+#content > div {
+  transition: 0.3s;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  opacity: 0;
+  overflow-y: auto;
+  height: 100%;
+  padding-bottom: 2rem;
+}
+
+#nav-Program1:checked ~ #window label[for="nav-Program1"] {
+  border-left: 7px solid #FC50A9;
+  color: #FC50A9;
+}
+#nav-Program1:checked ~ #window #content #content-Program1 {
+  left: 0;
+  opacity: 1;
+  transition-delay: 0.3s;
+}
+
+#nav-Program2:checked ~ #window label[for="nav-Program2"] {
+  border-left: 7px solid #FC50A9;
+  color: #FC50A9;
+}
+#nav-Program2:checked ~ #window #content #content-Program2 {
+  left: 0;
+  opacity: 1;
+  transition-delay: 0.3s;
+}
+#nav-Program3:checked ~ #window label[for="nav-Program3"] {
+  border-left: 7px solid #FC50A9;
+  color: #FC50A9;
+}
+#nav-Program3:checked ~ #window #content #content-Program3 {
+  left: 0;
+  opacity: 1;
+  transition-delay: 0.3s;
+}
+
+#nav-Program4:checked ~ #window label[for="nav-Program4"] {
+  border-left: 7px solid #FC50A9;
+  color: #FC50A9;
+}
+#nav-Program4:checked ~ #window #content #content-Program4 {
+  left: 0;
+  opacity: 1;
+  transition-delay: 0.3s;
+}
+#nav-Program5:checked ~ #window label[for="nav-Program5"] {
+  border-left: 7px solid #FC50A9;
+  color: #FC50A9;
+}
+#nav-Program5:checked ~ #window #content #content-Program5 {
+  left: 0;
+  opacity: 1;
+  transition-delay: 0.3s;
+}
+#nav-Program6:checked ~ #window label[for="nav-Program6"] {
+  border-left: 7px solid #FC50A9;
+  color: #FC50A9;
+}
+#nav-Program6:checked ~ #window #content #content-Program6 {
+  left: 0;
+  opacity: 1;
+  transition-delay: 0.3s;
+}
+#nav-Program7:checked ~ #window label[for="nav-Program7"] {
+  border-left: 7px solid #FC50A9;
+  color: #FC50A9;
+}
+#nav-Program7:checked ~ #window #content #content-Program7 {
+  left: 0;
+  opacity: 1;
+  transition-delay: 0.3s;
+}
+#nav-Program8:checked ~ #window label[for="nav-Program8"] {
+  border-left: 7px solid #FC50A9;
+  color: #FC50A9;
+}
+#nav-Program8:checked ~ #window #content #content-Program8 {
+  left: 0;
+  opacity: 1;
+  transition-delay: 0.3s;
+}
+#nav-Program9:checked ~ #window label[for="nav-Program9"] {
+  border-left: 7px solid #FC50A9;
+  color: #FC50A9;
+}
+#nav-Program9:checked ~ #window #content #content-Program9 {
+  left: 0;
+  opacity: 1;
+  transition-delay: 0.3s;
+}
+#nav-Program10:checked ~ #window label[for="nav-Program10"] {
+  border-left: 7px solid #FC50A9;
+  color: #FC50A9;
+}
+#nav-Program10:checked ~ #window #content #content-Program10 {
+  left: 0;
+  opacity: 1;
+  transition-delay: 0.3s;
+}
+#nav-Program11:checked ~ #window label[for="nav-Program11"] {
+  border-left: 7px solid #FC50A9;
+  color: #FC50A9;
+}
+#nav-Program11:checked ~ #window #content #content-Program11 {
+  left: 0;
+  opacity: 1;
+  transition-delay: 0.3s;
+}
+#nav-Program12:checked ~ #window label[for="nav-Program12"] {
+  border-left: 7px solid #FC50A9;
+  color: #FC50A9;
+}
+#nav-Program12:checked ~ #window #content #content-Program12 {
+  left: 0;
+  opacity: 1;
+  transition-delay: 0.3s;
+}
+#nav-Program13:checked ~ #window label[for="nav-Program13"] {
+  border-left: 7px solid #FC50A9;
+  color: #FC50A9;
+}
+#nav-Program13:checked ~ #window #content #content-Program13 {
+  left: 0;
+  opacity: 1;
+  transition-delay: 0.3s;
+}
+#nav-Program14:checked ~ #window label[for="nav-Program14"] {
+  border-left: 7px solid #FC50A9;
+  color: #FC50A9;
+}
+#nav-Program14:checked ~ #window #content #content-Program14 {
+  left: 0;
+  opacity: 1;
+  transition-delay: 0.3s;
+}
+#nav-Program15:checked ~ #window label[for="nav-Program15"] {
+  border-left: 7px solid #FC50A9;
+  color: #FC50A9;
+}
+#nav-Program15:checked ~ #window #content #content-Program15{
+  left: 0;
+  opacity: 1;
+  transition-delay: 0.3s;
+}
+#nav-Program16:checked ~ #window label[for="nav-Program16"] {
+  border-left: 7px solid #FC50A9;
+  color: #FC50A9;
+}
+#nav-Program16:checked ~ #window #content #content-Program16 {
+  left: 0;
+  opacity: 1;
+  transition-delay: 0.3s;
+}
+#nav-Program17:checked ~ #window label[for="nav-Program17"] {
+  border-left: 7px solid #FC50A9;
+  color: #FC50A9;
+}
+#nav-Program17:checked ~ #window #content #content-Program17 {
+  left: 0;
+  opacity: 1;
+  transition-delay: 0.3s;
+}
+#nav-Program18:checked ~ #window label[for="nav-Program18"] {
+  border-left: 7px solid #FC50A9;
+  color: #FC50A9;
+}
+#nav-Program18:checked ~ #window #content #content-Program18 {
+  left: 0;
+  opacity: 1;
+  transition-delay: 0.3s;
+}
+#nav-Program19:checked ~ #window label[for="nav-Program19"] {
+  border-left: 7px solid #FC50A9;
+  color: #FC50A9;
+}
+#nav-Program19:checked ~ #window #content #content-Program19 {
+  left: 0;
+  opacity: 1;
+  transition-delay: 0.3s;
+}
+#nav-Program20:checked ~ #window label[for="nav-Program20"] {
+  border-left: 7px solid #FC50A9;
+  color: #FC50A9;
+}
+#nav-Program20:checked ~ #window #content #content-Program20 {
+  left: 0;
+  opacity: 1;
+  transition-delay: 0.3s;
+}
+#nav-Program21:checked ~ #window label[for="nav-Program21"] {
+  border-left: 7px solid #FC50A9;
+  color: #FC50A9;
+}
+#nav-Program21:checked ~ #window #content #content-Program21{
+  left: 0;
+  opacity: 1;
+  transition-delay: 0.3s;
+}
+#nav-Program22:checked ~ #window label[for="nav-Program22"] {
+  border-left: 7px solid #FC50A9;
+  color: #FC50A9;
+}
+#nav-Program22:checked ~ #window #content #content-Program22 {
+  left: 0;
+  opacity: 1;
+  transition-delay: 0.3s;
+}
+#nav-Program23:checked ~ #window label[for="nav-Program23"] {
+  border-left: 7px solid #FC50A9;
+  color: #FC50A9;
+}
+#nav-Program23:checked ~ #window #content #content-Program23 {
+  left: 0;
+  opacity: 1;
+  transition-delay: 0.3s;
+}
+#nav-Program24:checked ~ #window label[for="nav-Program24"] {
+  border-left: 7px solid #FC50A9;
+  color: #FC50A9;
+}
+#nav-Program24:checked ~ #window #content #content-Program24 {
+  left: 0;
+  opacity: 1;
+  transition-delay: 0.3s;
+}
+#nav-Program25:checked ~ #window label[for="nav-Program25"] {
+  border-left: 7px solid #FC50A9;
+  color: #FC50A9;
+}
+#nav-Program25:checked ~ #window #content #content-Program25 {
+  left:  0;
+  opacity: 1;
+  transition-delay: 0.3s;
+}
+
+
+h3 {
+  margin-top: 1rem;
+}
+.font-lg {
+  font-size: 2rem;
+  letter-spacing: 1.5px;
+  font-weight: 300;
+ 
+}
+
+#content {
+  padding: 1rem;
+}
+#content > * {
+  margin-left: 3%;
+  margin-right: 3%;
+}
+#content-Program1,#content-Program2,#content-Program3,#content-Program4,#content-Program5,#content-Program6,#content-Program7,#content-Program8,#content-Program9,#content-Program10,#content-Program11,#content-Program12,#content-Program13, 
+#content-Program14,#content-Program15,#content-Program16,#content-Program17,#content-Program18,#content-Program19,#content-Program20,#content-Program21,#content-Program22,#content-Program23,#content-Program24,#content-Program25 {
+  width: 94%;
+}
+
+
+.title {
+  display: inline-block;
+  clear: both;
+  padding-bottom: 4px;
+  position: relative;
+  margin-bottom: 2.5rem;
+  border-bottom: 2px solid blue;
+}
+
